@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:jaxrs="http://cxf.apache.org/blueprint/jaxrs"
+           xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.0.0"
+           xsi:schemaLocation="
+      http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
+      http://cxf.apache.org/blueprint/jaxrs http://cxf.apache.org/schemas/blueprint/jaxrs.xsd">
+
+	  <jaxrs:server id="domain" address="/domain">
+	        <jaxrs:serviceBeans>
+	            <ref component-id="domainSvc"/>
+	        </jaxrs:serviceBeans>
+      </jaxrs:server>
+      
+      <bean id="domainSvc" class="com.melbourneit.services.rest.domain.DomainSvcImpl">
+    	   <property name="serviceManagement" ref="serviceManagement"/>
+    	   <property name="username" value="${spin_username}"/>
+    	   <property name="password" value="${spin_password}"/>
+      </bean>
+</blueprint>

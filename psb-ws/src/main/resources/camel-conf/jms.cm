@@ -1,0 +1,29 @@
+############## JMS START ##############
+
+# Authentication
+jms_brokerURL=tcp://localhost:61616
+jms_userName=system
+jms_password=manager
+
+# Connection pooling for ActiveMQ broker
+jms_maxConnections=8
+jms_concurrentConsumers=10
+jms_TemplateMessagesTimeToLiveProp=10000
+
+#The destination and maximum concurrencies for handling the request, ideally they should match with the spin maximum connections from above
+jms_checkDomainRequestDestinationProp=domain.check.Request?consumer.prefetchSize=1
+jms_multiCheckDomainRequestDestinationProp=domain.multicheck.Request?consumer.prefetchSize=1
+jms_registerDomainRequestDestinationProp=domain.register.Request?consumer.prefetchSize=1
+jms_genericSpinActionRequestDestinationProp=domain.genericaction.Request?consumer.prefetchSize=1
+jms_nameSuggestionRequestDestinationProp=domain.suggestion.Request?consumer.prefetchSize=1
+
+jms_checkDomainConcurrentConsumersProp=10
+jms_multiCheckDomainConcurrentConsumersProp=15
+jms_registerDomainConcurrentConsumersProp=2
+jms_genericSpinActionConcurrentConsumersProp=20
+jms_nameSuggestionActionConcurrentConsumersProp=10
+
+# Default options
+jms_defaultOpt=concurrentConsumers=1&disableReplyTo=false&maxConcurrentConsumers=1&maxMessagesPerTask=-1&preserveMessageQos=false&requestTimeout=20000&transacted=false&testConnectionOnStartup=false
+
+############## JMS END ##############

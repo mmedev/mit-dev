@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.0.0"
+           xsi:schemaLocation="
+      http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd">
+
+	  <!-- ############## HTTP CLIENT START ################## -->
+
+	<bean id="checkDefaultHttpClient"
+		class="org.apache.commons.httpclient.HttpClient">
+		<property name="httpConnectionManager" ref="spinCheckThreadedHttpConnectionManager" />
+	</bean>
+
+	<bean id="multiCheckDefaultHttpClient"
+		class="org.apache.commons.httpclient.HttpClient">
+		<property name="httpConnectionManager" ref="spinMultiCheckThreadedHttpConnectionManager" />
+	</bean>
+
+	<bean id="spinDefaultHttpClient"
+		class="org.apache.commons.httpclient.HttpClient">
+		<property name="httpConnectionManager" ref="spinDefaultThreadedHttpConnectionManager" />
+	</bean>
+
+	<bean id="domainsBotDefaultHttpClient"
+		class="org.apache.commons.httpclient.HttpClient">
+		<property name="httpConnectionManager" ref="domainsBotDefaultThreadedHttpConnectionManager" />
+	</bean>
+
+	<bean id="spinDefaultThreadedHttpConnectionManager"
+		class="org.apache.commons.httpclient.MultiThreadedHttpConnectionManager" >
+		<property name="params" ref="spinDefaultMultiThreadedParams" />
+	</bean>
+
+	<bean id="domainsBotDefaultThreadedHttpConnectionManager"
+		class="org.apache.commons.httpclient.MultiThreadedHttpConnectionManager" >
+		<property name="params" ref="domainsBotDefaultMultiThreadedParams" />
+	</bean>
+
+	<bean id="spinCheckThreadedHttpConnectionManager"
+		class="org.apache.commons.httpclient.MultiThreadedHttpConnectionManager" >
+		<property name="params" ref="spinCheckMultiThreadedParams" />
+	</bean>
+
+	<bean id="spinMultiCheckThreadedHttpConnectionManager"
+		class="org.apache.commons.httpclient.MultiThreadedHttpConnectionManager" >
+		<property name="params" ref="spinMultiCheckMultiThreadedParams" />
+	</bean>
+
+	<bean id="spinDefaultMultiThreadedParams"
+		class="org.apache.commons.httpclient.params.HttpConnectionManagerParams">
+		<property name="connectionTimeout" value="${defaultSpinConnectionTimeoutProp}" />
+		<property name="soTimeout" value="${defaultSpinReadTimeoutProp}" />
+		<property name="defaultMaxConnectionsPerHost" value="${defaultSpinMaxConnectionsPerHostProp}" />
+		<property name="maxTotalConnections" value="${defaultSpinMaxTotalConnectionsProp}" />
+	</bean>
+
+	<bean id="domainsBotDefaultMultiThreadedParams"
+		class="org.apache.commons.httpclient.params.HttpConnectionManagerParams">
+		<property name="connectionTimeout" value="${defaultDomainsBotConnectionTimeoutProp}" />
+		<property name="soTimeout" value="${defaultDomainsBotReadTimeoutProp}" />
+		<property name="defaultMaxConnectionsPerHost" value="${defaultDomainsBotMaxConnectionsPerHostProp}" />
+		<property name="maxTotalConnections" value="${defaultDomainsBotMaxTotalConnectionsProp}" />
+	</bean>
+
+	<bean id="spinCheckMultiThreadedParams"
+		class="org.apache.commons.httpclient.params.HttpConnectionManagerParams">
+		<property name="connectionTimeout" value="${defaultSpinConnectionTimeoutProp}" />
+		<property name="soTimeout" value="${defaultSpinReadTimeoutProp}" />
+		<property name="defaultMaxConnectionsPerHost" value="${checkSpinMaxConnectionsPerHostProp}" />
+		<property name="maxTotalConnections" value="${checkSpinMaxTotalConnectionsProp}" />
+	</bean>
+
+	<bean id="spinMultiCheckMultiThreadedParams"
+		class="org.apache.commons.httpclient.params.HttpConnectionManagerParams">
+		<property name="connectionTimeout" value="${defaultSpinConnectionTimeoutProp}" />
+		<property name="soTimeout" value="${defaultSpinReadTimeoutProp}" />
+		<property name="defaultMaxConnectionsPerHost" value="${multiCheckSpinMaxConnectionsPerHostProp}" />
+		<property name="maxTotalConnections" value="${multiCheckSpinMaxTotalConnectionsProp}" />
+	</bean>
+
+
+	<!-- ############## HTTP CLIENT END  ############## -->
+      
+</blueprint>
