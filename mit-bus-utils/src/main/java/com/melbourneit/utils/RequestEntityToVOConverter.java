@@ -3,7 +3,6 @@ package com.melbourneit.utils;
 import com.melbourneit.model.psb.ContactInfo;
 import com.melbourneit.model.rest.UpdateContactDetailsRequest;
 
-
 /**
  *
  * @author mhanda
