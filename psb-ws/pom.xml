@@ -3,7 +3,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.melborneit</groupId>
+	<groupId>com.melbourneit</groupId>
 	<artifactId>psb-ws</artifactId>
     <packaging>bundle</packaging>
     <version>1.0.0-SNAPSHOT</version>
@@ -63,7 +63,6 @@
 				<groupId>org.apache.felix</groupId>
 				<artifactId>maven-bundle-plugin</artifactId>
 				<extensions>true</extensions>
-				<version>2.3.7</version>
 				<configuration>
 					<instructions>
 						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
