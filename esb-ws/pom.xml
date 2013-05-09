@@ -109,7 +109,7 @@
 		              <goal>copy-resources</goal>
 		            </goals>
 		            <configuration>
-		              <outputDirectory>/Development/fuse-esb-7.1.0.fuse-047/etc</outputDirectory>
+		              <outputDirectory>C:/Development/fuse-esb-7.1.0.fuse-047/etc</outputDirectory>
 		              <resources>          
 		                <resource>
 		                  <directory>src/main/resources/esb-conf</directory>
