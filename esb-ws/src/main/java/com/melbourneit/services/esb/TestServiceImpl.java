@@ -1,7 +1,6 @@
 package com.melbourneit.services.esb;
 
 import org.apache.camel.ProducerTemplate;
-
 import com.melbourneit.model.rest.CheckDomainRequest;
 
 public class TestServiceImpl implements TestService{
