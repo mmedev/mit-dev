@@ -1,6 +1,6 @@
 package com.melbourneit.utils;
 
-public class Validationss
+public class Validations
 {
     public static boolean isValidInteger(String intString)
     {
