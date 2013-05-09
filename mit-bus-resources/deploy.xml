@@ -1,0 +1,23 @@
+<project name="Deploy widgetti-bd-ws on local workstation" default="deploy">
+	
+	<description>
+		Deploy MIT BUS Resources : Local use only
+	</description>
+	
+	<property name="version" value="1.0" />
+		
+	<property name="deploymentdir" value="D:/Work/NWS/development/tools/fuse-esb-7.1.0.fuse-047/etc"/>
+	
+	<property name="targetESB" location="./dev/esb/esb.domain.management.cfg" />
+	<property name="targetPSB" location="./dev/psb/psb.domain.management.cfg" />
+	
+	<echo>Copying resources to ${deploymentdir}</echo>
+
+	<target name="deploy">
+		<copy file="${targetESB}" toDir="${deploymentdir}" overwrite="true" />
+		<copy file="${targetPSB}" toDir="${deploymentdir}" overwrite="true" />
+		<echo>Done copying resources.</echo>
+	</target>
+		
+</project>
+	
