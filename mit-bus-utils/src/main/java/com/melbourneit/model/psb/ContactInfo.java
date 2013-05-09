@@ -3,7 +3,7 @@ package com.melbourneit.model.psb;
 /**
  * @author mhanda
  */
-public class ContactInfox
+public class ContactInfo
 {
     public static class ContactData
     {
