@@ -8,8 +8,8 @@
 		
 	<property name="deploymentdir" value="D:/Work/NWS/development/tools/fuse-esb-7.1.0.fuse-047/etc"/>
 	
-	<property name="targetESB" location="./dev/esb/esb.domain.management.cfg" />
-	<property name="targetPSB" location="./dev/psb/psb.domain.management.cfg" />
+	<property name="targetESB" location="./local/esb/esb.domain.management.cfg" />
+	<property name="targetPSB" location="./local/psb/psb.domain.management.cfg" />
 	
 	<echo>Copying resources to ${deploymentdir}</echo>
 
