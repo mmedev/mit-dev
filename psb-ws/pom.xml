@@ -11,8 +11,8 @@
     <description>MIT PSB development</description>
 
 	<properties>
-        <maven.compiler.source>1.6</maven.compiler.source>
-        <maven.compiler.target>1.6</maven.compiler.target>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
 	</properties>
 
     <dependencies>
@@ -62,6 +62,18 @@
     			</excludes>
     		</resource>
       	</resources>
+      	
+      	<!-- To define the plugin version in your parent POM -->
+	    <pluginManagement>
+	      <plugins>
+	        <plugin>
+	          <groupId>org.apache.maven.plugins</groupId>
+	          <artifactId>maven-compiler-plugin</artifactId>
+	          <version>3.1</version>
+	        </plugin>
+	      </plugins>
+	    </pluginManagement>
+	    <!-- To use the plugin goals in your POM or parent POM -->
     
         <plugins>
             <plugin>
@@ -100,27 +112,9 @@
 		  </plugin>
   			 
   			<plugin>
-		        <artifactId>maven-resources-plugin</artifactId>
-		        <version>2.4.3</version>
-		        <executions>
-		          <execution>
-		            <id>copy-resources</id>
-		            <phase>validate</phase>
-		            <goals>
-		              <goal>copy-resources</goal>
-		            </goals>
-		            <configuration>
-		              <outputDirectory>C:/Development/fuse-esb-7.1.0.fuse-047/etc</outputDirectory>
-		              <resources>          
-		                <resource>
-		                  <directory>src/main/resources/psb-conf</directory>
-		                  <filtering>true</filtering>
-		                </resource>
-		              </resources>              
-		            </configuration>            
-		          </execution>
-		        </executions>
-		     </plugin>
+  				<groupId>org.apache.maven.plugins</groupId>
+  				<artifactId>maven-compiler-plugin</artifactId>
+  			</plugin>
 		   
         </plugins>
     </build>
