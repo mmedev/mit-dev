@@ -32,8 +32,8 @@
 
 <!-- ################# JMS BEAN START ################# -->
 
-	<bean id="domainService" class="com.melbourneit.services.jms.domain.DomainServiceImpl">
-		<property name="serviceManagement" ref="serviceManagement"/>
+	<bean id="domainJMS" class="com.melbourneit.services.jms.domain.DomainJMSImpl">
+		<property name="domainService" ref="domainService"/>
     	<property name="username" value="${spin_username}"/>
     	<property name="password" value="${spin_password}"/>
 	</bean>
