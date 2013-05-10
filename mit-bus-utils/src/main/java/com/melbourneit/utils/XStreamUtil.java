@@ -8,9 +8,22 @@ import com.thoughtworks.xstream.XStream;
 
 public class XStreamUtil {
 	
+	public static <T> String toXML(T obj) {
+		XStream xstream = new XStream();
+	    return xstream.toXML(obj); 
+	}
+	
 	public static <T> String toXML(T obj, Class<?> clz) {
 		XStream xstream = new XStream();
 		xstream.alias(clz.getSimpleName(), clz);
+	    return xstream.toXML(obj);
+	}
+	
+	public static <T> String toXML(T obj, Class<?>... clz) {
+		XStream xstream = new XStream();
+		for(Class<?> c : clz){
+			xstream.alias(c.getSimpleName(), c);
+		}
 	    return xstream.toXML(obj);
 	}
 	
@@ -66,6 +79,15 @@ public class XStreamUtil {
 	public static <T> T fromXML(String xml, Class<?> clz){
 		XStream xstream = new XStream();
 		xstream.alias(clz.getSimpleName(), clz);
+		return (T) xstream.fromXML(xml);
+	}
+	
+	@SuppressWarnings("unchecked")
+	public static <T> T fromXML(String xml, Class<?>... clz){
+		XStream xstream = new XStream();
+		for(Class<?> c : clz){
+			xstream.alias(c.getSimpleName(), c);
+		}
 		return (T) xstream.fromXML(xml);
 	}
 	

@@ -9,6 +9,9 @@ public class CheckDomainRequest extends JmsRequest{
     private String username;
     private String password;
     
+    public CheckDomainRequest(){
+	}
+    
     public CheckDomainRequest(String name, String username, String password) {
 		this.name=name;
 		this.username=username;
