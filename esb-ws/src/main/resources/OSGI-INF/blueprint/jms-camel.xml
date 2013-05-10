@@ -10,11 +10,13 @@
     <propertyPlaceholder location="camel-conf/jms.cm"/>
     <template id="camelJMS"/>
     <endpoint uri="activemq:{{jms_checkDomainRequestDestinationProp}}?{{jms_defaultOpt}}" id="domainCheck"/>
+     
     <route>
         <from uri="direct:domainCheck"/>
         <log message="Connecting to PSB via jms to perform domain checking ..."/>
-        <to uri="ref:domainCheck"/>
+        <to ref="domainCheck"/>
     </route>
+       
 </camelContext>
 	
 </blueprint>
