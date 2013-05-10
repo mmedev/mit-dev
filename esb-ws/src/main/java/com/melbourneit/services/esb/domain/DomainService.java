@@ -1,8 +1,8 @@
-package com.melbourneit.services.esb;
+package com.melbourneit.services.esb.domain;
 
 import com.melbourneit.exception.BaseException;
 
-public interface TestService{
+public interface DomainService{
     
     public String checkDomainName(String domainName) throws BaseException;
 

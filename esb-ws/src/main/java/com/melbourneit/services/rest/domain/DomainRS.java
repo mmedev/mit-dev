@@ -1,4 +1,4 @@
-package com.melbourneit.services.rest.test;
+package com.melbourneit.services.rest.domain;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -6,8 +6,8 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-@Path("/testsvc/")
-public interface TestSvc{
+@Path("/service/")
+public interface DomainRS{
 
     @GET
     @Path("/checkDomain/{domain}")
