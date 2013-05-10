@@ -7,11 +7,11 @@ public class TestSvcImpl implements TestSvc{
 	private TestService testService;
 	
 	@Override
-	public String checkDomain(String domain, String clientRefId, String logId) {	
+	public String checkDomain(String domain) {	
 		try {
-			return testService.checkDomainName(domain, clientRefId, logId);	
-		} catch (Exception e) {
-			return e.toString();
+			return testService.checkDomainName(domain);	
+		}catch (Exception e) {
+			return e.toString() + " - Return Error response message to the client";
 		}
 	}
 	

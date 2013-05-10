@@ -10,8 +10,8 @@ import javax.ws.rs.core.MediaType;
 public interface TestSvc{
 
     @GET
-    @Path("/checkDomain/{domain}/{clientRefId}/{logId}")
+    @Path("/checkDomain/{domain}")
     @Produces(MediaType.TEXT_PLAIN)
-    public String checkDomain(@PathParam("domain") String domain, @PathParam("clientRefId") String clientRefId, @PathParam("logId") String logId);
+    public String checkDomain(@PathParam("domain") String domain);
 
 }
