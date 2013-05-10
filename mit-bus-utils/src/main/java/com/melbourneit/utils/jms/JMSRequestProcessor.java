@@ -2,23 +2,21 @@ package com.melbourneit.utils.jms;
 
 import org.apache.camel.ProducerTemplate;
 import com.melbourneit.exception.JMSResquestException;
-import com.melbourneit.model.jms.JmsRequest;
-import com.melbourneit.model.jms.JmsResponse;
+import com.melbourneit.model.jms.JMSReqRes;
 import com.melbourneit.utils.XStreamUtil;
 
-public class JMSRequestProcessor<T> {
+public class JMSRequestProcessor {
 	
-	public T process(ProducerTemplate producer, String endpoint, JmsRequest request) throws JMSResquestException{
+	public Object process(ProducerTemplate producer, String endpoint, JMSReqRes request) throws JMSResquestException{
 
 		try{
-			Object response = producer.requestBody(endpoint, XStreamUtil.toXML(request, request.getClass()));
+			Object response = producer.requestBody(endpoint, XStreamUtil.toXML(request, JMSReqRes.class));
 			
 			if(response != null){
 				if(response instanceof String && !((String) response).trim().isEmpty()){
-					@SuppressWarnings("unchecked")
-					JmsResponse<T> jmsResponse = XStreamUtil.fromXML(response.toString(), JmsResponse.class);		
-					if(request.getResponseStatus() == JMSResponseStatus.PASSED)
-						 return jmsResponse.getResponseObject();
+					request = XStreamUtil.fromXML(response.toString(), JMSReqRes.class);		
+					if(request.getResponse().getResponseStatus() == JMSResponseStatus.PASSED)
+						 return request.getResponse().getResponseObject();
 				}
 			}
 			throw new JMSResquestException("JMS Failed to response. Please check your configurations.");

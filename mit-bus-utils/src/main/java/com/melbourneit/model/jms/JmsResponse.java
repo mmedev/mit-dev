@@ -4,18 +4,27 @@ import java.io.Serializable;
 
 import com.melbourneit.utils.jms.JMSResponseStatus;
 
-public abstract class JmsResponse<T> implements Serializable {
+public class JmsResponse implements Serializable {
 
 	private static final long serialVersionUID = 1234567890L;
 	
 	private JMSResponseStatus responseStatus;
 	private String responseMessage;
-	private T responseObject;
+	private Object responseObject;
 	
-	public T getResponseObject() {
+	public JmsResponse() {
+	}
+	
+	public JmsResponse(JMSResponseStatus responseStatus, String responseMessage, Object responseObject) {
+		this.responseStatus=responseStatus;
+		this.responseMessage=responseMessage;
+		this.responseObject=responseObject;
+	}
+		
+	public Object getResponseObject() {
 		return responseObject;
 	}
-	public void setResponseObject(T responseObject) {
+	public void setResponseObject(Object responseObject) {
 		this.responseObject = responseObject;
 	}
 	public String getResponseMessage() {
