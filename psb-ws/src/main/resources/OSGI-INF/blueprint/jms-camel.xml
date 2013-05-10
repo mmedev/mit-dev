@@ -13,8 +13,7 @@
     <route>
         <from ref="domainCheck"/>
         <log message="PSB is checking domain ..."/>
-        <to uri="bean:jmsRequestProcessor?method=getJMSRequest(java.lang.String)"/>
-        <to uri="bean:domainService?method=checkDomain(com.melbourneit.services.jms.domain.CheckDomainRequest)"/>
+        <to uri="bean:domainService?method=checkDomain(java.lang.String)"/>
     </route>
 </camelContext>
 </blueprint>
