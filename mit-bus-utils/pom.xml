@@ -107,8 +107,13 @@
 	      <artifactId>cxf-bundle</artifactId>
 	      <version>2.4.2</version>
 	    </dependency>
-            
-            
+	    
+	    <dependency>
+		  <groupId>org.apache.camel</groupId>
+		  <artifactId>camel-xstream</artifactId>
+		  <version>2.10.4</version>
+		</dependency>
+                
 	</dependencies>
 
 	<build>
@@ -138,7 +143,9 @@
 						</Import-Package>
 						<Export-Package>
 							com.melbourneit.utils.*,
-							com.melbourneit.model.*
+							com.melbourneit.model.*,
+							com.melbourneit.logger.*,
+							com.melbourneit.exception.*
 						</Export-Package>
 					</instructions>
 				</configuration>
