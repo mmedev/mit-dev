@@ -8,13 +8,13 @@
       http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
       http://cxf.apache.org/blueprint/jaxrs http://cxf.apache.org/schemas/blueprint/jaxrs.xsd">
 
-	  <jaxrs:server id="test" address="/test">
+	  <jaxrs:server address="/domain" id="domain">
 	        <jaxrs:serviceBeans>
-	            <ref component-id="testSvc"/>
+	            <ref component-id="domainRS"/>
 	        </jaxrs:serviceBeans>
       </jaxrs:server>
       
-      <bean id="testSvc" class="com.melbourneit.services.rest.test.TestSvcImpl">
-      		<property name="testService" ref="testService" />   
+      <bean id="domainRS" class="com.melbourneit.services.rest.domain.DomainRSImpl">
+      		<property name="domainService" ref="domainService" />   
       </bean>
 </blueprint>

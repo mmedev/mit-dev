@@ -14,6 +14,7 @@
 	<classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-blueprint/2.10.0.fuse-71-047/camel-blueprint-2.10.0.fuse-71-047.jar"/>
 	<classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-core/2.10.0.fuse-71-047/camel-core-2.10.0.fuse-71-047.jar"/>
 	<classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-api/1.6.6/slf4j-api-1.6.6.jar" sourcepath="M2_REPO/org/slf4j/slf4j-api/1.6.6/slf4j-api-1.6.6-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/sun/xml/bind/jaxb-impl/2.2.1.1/jaxb-impl-2.2.1.1.jar"/>
 	<classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-core-xml/2.10.0.fuse-71-047/camel-core-xml-2.10.0.fuse-71-047.jar"/>
 	<classpathentry kind="var" path="M2_REPO/org/apache/camel/camel-core-osgi/2.10.0.fuse-71-047/camel-core-osgi-2.10.0.fuse-71-047.jar"/>
 	<classpathentry kind="var" path="M2_REPO/org/apache/aries/blueprint/org.apache.aries.blueprint/1.0.1.fuse-71-047/org.apache.aries.blueprint-1.0.1.fuse-71-047.jar"/>
@@ -64,7 +65,6 @@
 	<classpathentry kind="var" path="M2_REPO/org/apache/cxf/cxf-rt-bindings-soap/2.7.4/cxf-rt-bindings-soap-2.7.4.jar"/>
 	<classpathentry kind="var" path="M2_REPO/org/apache/cxf/cxf-rt-databinding-jaxb/2.7.4/cxf-rt-databinding-jaxb-2.7.4.jar"/>
 	<classpathentry kind="var" path="M2_REPO/org/apache/cxf/cxf-rt-core/2.7.4/cxf-rt-core-2.7.4.jar"/>
-	<classpathentry kind="var" path="M2_REPO/com/sun/xml/bind/jaxb-impl/2.2.1.1/jaxb-impl-2.2.1.1.jar"/>
 	<classpathentry kind="var" path="M2_REPO/org/apache/cxf/cxf-bundle/2.4.2/cxf-bundle-2.4.2.jar"/>
 	<classpathentry kind="var" path="M2_REPO/org/apache/geronimo/specs/geronimo-stax-api_1.0_spec/1.0.1/geronimo-stax-api_1.0_spec-1.0.1.jar"/>
 	<classpathentry kind="var" path="M2_REPO/org/apache/geronimo/specs/geronimo-annotation_1.0_spec/1.1.1/geronimo-annotation_1.0_spec-1.1.1.jar"/>
