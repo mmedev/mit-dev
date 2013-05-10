@@ -8,7 +8,7 @@
 
 	  <cm:property-placeholder id="prop" persistent-id="esb.domain.management"></cm:property-placeholder>
 	  
-	   <bean id="testService" class="com.melbourneit.services.esb.TestServiceImpl">
+	   <bean id="domainService" class="com.melbourneit.services.esb.domain.DomainServiceImpl">
 	   		<property name="producer" ref="camelJMS"/>
 	   </bean>
      

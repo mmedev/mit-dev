@@ -1,4 +1,4 @@
-package com.melbourneit.services.psb;
+package com.melbourneit.services.psb.domain;
 
 import java.util.Enumeration;
 import java.util.HashMap;
@@ -18,8 +18,7 @@ import com.melbourneit.utils.spin.SPINConstants;
 import com.melbourneit.utils.spin.SpinGenericApiInvoker;
 import com.melbourneit.utils.UserDetails;
 
-public class PSBServiceManagementImpl implements PSBServiceManagement
-{
+public class DomainServiceImpl implements DomainService{
     private String spinUrl;
 
     private HttpClient checkDomainHttpClient;
@@ -38,7 +37,7 @@ public class PSBServiceManagementImpl implements PSBServiceManagement
     private Hashtable<String, HttpClient> actionToHttpClientMap = new Hashtable<String, HttpClient>();
     
     private static final Logger LOG = LoggerFactory
-            .getLogger(PSBServiceManagementImpl.class);
+            .getLogger(DomainServiceImpl.class);
 
     private String defaultMaxExecWaitSeconds;
 
@@ -308,7 +307,7 @@ public class PSBServiceManagementImpl implements PSBServiceManagement
     @Override
     public String checkDomainName(String domainName, UserDetails details, String clientRefId, 
             String logId)
-    {
+{
         HashMap<String,String> params = getNewParamsMapWithName(domainName);
 
         return SpinGenericApiInvoker.invokeApi(checkDomainHttpClient, spinUrl, 

@@ -8,7 +8,7 @@
 
 	  <cm:property-placeholder id="prop" persistent-id="psb.domain.management"></cm:property-placeholder>
 
-      <bean id="serviceManagement" class="com.melbourneit.services.psb.PSBServiceManagementImpl" init-method="init">
+      <bean id="domainService" class="com.melbourneit.services.psb.domain.DomainServiceImpl" init-method="init">
       	  	<property name="spinUrl" value="${spin_url}" />
       	  	<property name="defaultMaxExecWaitSeconds" value="${defaultMaxExecWaitSecondsProp}" />
       	  	<property name="checkDomainHttpClient" ref="checkDefaultHttpClient" />
@@ -23,9 +23,4 @@
 			<property name="genericFunctionHttpClient" ref="spinDefaultHttpClient" />
 			<property name="nameSuggestionHttpClient" ref="domainsBotDefaultHttpClient" />
       </bean>
-      <!-- 
-      <bean id="authenticationInterceptor" class="org.apache.cxf.interceptor.security.JAASLoginInterceptor">
-          <property name="contextName" value="karaf"/>
-      </bean>
-		-->
 </blueprint>

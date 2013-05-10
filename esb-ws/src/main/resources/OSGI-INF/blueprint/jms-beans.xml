@@ -8,14 +8,6 @@
       http://cxf.apache.org/blueprint/jaxrs http://cxf.apache.org/schemas/blueprint/jaxrs.xsd">
 
 <!-- ################# ACTIVE MQ START ################# -->
-    <!-- connect to the local ActiveMQ broker -->
-	<!-- Not using connection pooling 
-    <bean id="activemq" class="org.apache.activemq.camel.component.ActiveMQComponent">
-        <property name="brokerURL" value="${jmsbrokerURL}"/>
-        <property name="userName" value="${userName}"/>
-        <property name="password" value="${password}"/>
-    </bean>
-    -->
     <!-- Using connection pooling -->
     <bean id="jmsConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
 	   <property name="brokerURL" value="${jms_brokerURL}"/>
