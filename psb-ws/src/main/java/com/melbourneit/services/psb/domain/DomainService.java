@@ -1,4 +1,4 @@
-package com.melbourneit.services.psb;
+package com.melbourneit.services.psb.domain;
 
 import java.util.List;
 import java.util.Map;
@@ -6,15 +6,7 @@ import java.util.Map;
 import com.melbourneit.model.psb.ContactInfo;
 import com.melbourneit.utils.UserDetails;
 
-/**
- * This interface defines the operations exposed by the PSBServiceManagement OSGi service
- * There are only 6 operations defined at this stage.
- * To add more operations to your OSGi service, add those operations in this interface
- * with appropriate signatures
- * @author mhanda
- */
-public interface PSBServiceManagement
-{
+public interface DomainService{
     /**
      * This operation provides check domain service in the form of an OSGi service
      * @param domainName The domain name

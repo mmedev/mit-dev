@@ -8,15 +8,7 @@
       http://cxf.apache.org/blueprint/jaxrs http://cxf.apache.org/schemas/blueprint/jaxrs.xsd">
 
 <!-- ################# ACTIVE MQ START ################# -->
-    <!-- connect to the local ActiveMQ broker -->
-	<!-- Not using connection pooling 
-    <bean id="activemq" class="org.apache.activemq.camel.component.ActiveMQComponent">
-        <property name="brokerURL" value="${jmsbrokerURL}"/>
-        <property name="userName" value="${userName}"/>
-        <property name="password" value="${password}"/>
-    </bean>
-    -->
-    <!-- Using connection pooling -->
+
     <bean id="jmsConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
 	   <property name="brokerURL" value="${jms_brokerURL}"/>
 	   <property name="userName" value="${jms_userName}"/>
@@ -35,5 +27,17 @@
 	<bean id="activemq" class="org.apache.camel.component.jms.JmsComponent">
 	    <property name="configuration" ref="jmsConfig"/>
 	</bean>
+	
+<!-- ################# ACTIVE MQ END ################# -->
+
+<!-- ################# JMS BEAN START ################# -->
+
+	<bean id="domainJMS" class="com.melbourneit.services.jms.domain.DomainJMSImpl">
+		<property name="domainService" ref="domainService"/>
+    	<property name="username" value="${spin_username}"/>
+    	<property name="password" value="${spin_password}"/>
+	</bean>
+
+<!-- ################# JMS BEAN END ################# -->
 	
 </blueprint>
