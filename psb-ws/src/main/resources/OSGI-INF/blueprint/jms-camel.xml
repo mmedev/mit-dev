@@ -7,13 +7,14 @@
              http://camel.apache.org/schema/blueprint http://camel.apache.org/schema/blueprint/camel-blueprint.xsd">
 
     <camelContext id="camel_jms" xmlns="http://camel.apache.org/schema/blueprint">
-	    <propertyPlaceholder location="camel-conf/jms.cm"/>
-	    <template id="camelJMS"/>
-	    <endpoint uri="activemq:{{jms_checkDomainRequestDestinationProp}}?{{jms_defaultOpt}}" id="domainCheck"/>
-	    <route>
-	        <from ref="domainCheck"/>
-	        <log message="PSB is checking domain ..."/>
-	        <to uri="bean:domainSvc?method=checkDomain(com.melbourneit.model.rest.CheckDomainRequest)"/>
-	    </route>
-	</camelContext>
+    <propertyPlaceholder location="camel-conf/jms.cm"/>
+    <template id="camelJMS"/>
+    <endpoint uri="activemq:{{jms_checkDomainRequestDestinationProp}}?{{jms_defaultOpt}}" id="domainCheck"/>
+    <route>
+        <from ref="domainCheck"/>
+        <log message="PSB is checking domain ..."/>
+        <to uri="bean:jmsRequestProcessor?method=getJMSRequest(java.lang.String)"/>
+        <to uri="bean:domainService?method=checkDomain(com.melbourneit.services.jms.domain.CheckDomainRequest)"/>
+    </route>
+</camelContext>
 </blueprint>
